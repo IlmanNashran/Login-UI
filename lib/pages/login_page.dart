@@ -24,11 +24,13 @@ class _LoginPageState extends State<LoginPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _avatarWidget(),
+          _emailFieldWidget(),
         ],
       ),
     );
   }
 
+//default_profile image
   Widget _avatarWidget() {
     double? _circleD = _deviceHeight! * 0.25;
     return Center(
@@ -45,4 +47,30 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  //email field
+  Widget _emailFieldWidget() {
+    return Container(
+      width: _deviceWidth! * 0.70,
+      child: const TextField(
+        cursorColor: Colors.white,
+        autocorrect: false,
+        style: TextStyle(
+          color: Colors.white,
+        ),
+        decoration: InputDecoration(
+          hintText: "ilman@gmail.com",
+          hintStyle: TextStyle(color: Colors.white),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+
+  
 }
