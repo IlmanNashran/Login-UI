@@ -72,5 +72,28 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  
+  //create password field
+    Widget _passwordFieldWidget() {
+    return Container(
+      width: _deviceWidth! * 0.70,
+      child: const TextField(
+        obscureText: true,//unseen text
+        cursorColor: Colors.white,
+        autocorrect: false,
+        style: TextStyle(
+          color: Colors.white,
+        ),
+        decoration: InputDecoration(
+          hintText: "Password",
+          hintStyle: TextStyle(color: Colors.white),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
 }
