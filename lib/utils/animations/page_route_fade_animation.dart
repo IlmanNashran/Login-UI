@@ -5,7 +5,7 @@ class PageRouteFadeAnimation extends PageRouteBuilder {
 
   PageRouteFadeAnimation(this._child)
       : super(
-          transitionDuration: Duration(milliseconds: 500t),
+          transitionDuration: Duration(milliseconds: 500),
           transitionsBuilder: (BuildContext _context,
               Animation<double> animation,
               Animation<double> secondAnimation,
