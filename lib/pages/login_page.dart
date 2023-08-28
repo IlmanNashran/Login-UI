@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_ui_app/pages/home_page.dart';
 import '../utils/animations/login_page_animation.dart';
 
 class LoginPage extends StatefulWidget {
@@ -61,7 +62,7 @@ class _LoginPageState extends State<LoginPage>
               SizedBox(
                 height: _deviceHeight! * 0.10,
               ),
-              _loginButton(),
+              _loginButton(context),
             ],
           ),
         ),
@@ -144,23 +145,33 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  Widget _loginButton() {
+  Widget _loginButton(BuildContext _context) {
     return MaterialButton(
-        minWidth: _deviceWidth! * 0.38,
-        height: _deviceHeight! * 0.05,
-        color: Colors.white,
-        child: const Text(
-          "LogIn",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Color.fromRGBO(125, 191, 211, 1.0),
+      minWidth: _deviceWidth! * 0.38,
+      height: _deviceHeight! * 0.05,
+      color: Colors.white,
+      child: const Text(
+        "Log In",
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: Color.fromRGBO(125, 191, 211, 1.0),
+        ),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25.0),
+        side: BorderSide(color: Colors.white),
+      ),
+      onPressed: () {
+        Navigator.pushReplacement(
+          _context,
+          MaterialPageRoute(
+            builder: (BuildContext _context) {
+              return HomePage();
+            },
           ),
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.0),
-          side: BorderSide(color: Colors.white),
-        ),
-        onPressed: () {}); //button material
+        );
+      },
+    ); //button material
   }
 }
