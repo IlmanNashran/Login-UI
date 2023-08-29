@@ -163,7 +163,8 @@ class _LoginPageState extends State<LoginPage>
         borderRadius: BorderRadius.circular(25.0),
         side: BorderSide(color: Colors.white),
       ),
-      onPressed: () {
+      onPressed: () async {
+        await _controller!.reverse();
         Navigator.pushReplacement(
           _context,
           PageRouteFadeAnimation(
